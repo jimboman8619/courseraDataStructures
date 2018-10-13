@@ -1,5 +1,6 @@
 import caesarcipher.CharacterStat;
 import caesarcipher.Chiper;
+import caesarcipher.decrypt.CaesarBreaker;
 
 import static caesarcipher.WordLengths.testCountWordLengths;
 
@@ -13,9 +14,9 @@ public class Main {
 //        System.out.println(Chiper.encrypt(input,key1));
 //        System.out.println(Chiper.encrypt2(input,key1,key2));
 //        System.out.println(CharacterStat.maxChar("Hi, do you want a lollipop today? I own many good flavors, but banana is outstanding."));
+//       testCountWordLengths("smallHamlet.txt");
 
-
-        testCountWordLengths("smallHamlet.txt");
+        CaesarBreaker.testDecrypt2();
 
     }
 }
