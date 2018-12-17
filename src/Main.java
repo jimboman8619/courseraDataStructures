@@ -1,11 +1,14 @@
 import caesarcipher.CharacterStat;
-import logentry.Tester;
+import edu.duke.FileResource;
+//import logentry.Tester;
 import week2.*;
+import week4.CaesarCipher;
+import week4.Tester;
 
 public class Main {
 
     public static void main(String[] args) {
-        Tester test = new Tester();
+//        Tester test = new Tester();
 //        test.testLogAnalyzer();
 //        test.testUniqueIP();
 //        test.testHigherThanNum(400);
@@ -18,7 +21,16 @@ public class Main {
 //        test.testIPsMostVisits();
 //        test.testIPsForDays();
 //        test.testDayWithMostIPVisits();
-        test.iPsWithMostVisitsOnDay();
+//        test.iPsWithMostVisitsOnDay();
+
+        Tester test = new Tester();
+//        test.testCaesarCipher("week4/testdata/titus-small.txt");
+//        System.out.println("******************************************");
+//        test.testCaesarCracker("week4/testdata/titus-small_key5.txt");
+////        test.testCaesarCracker("week4/testdata/oslusiadas_key17.txt");
+//        System.out.println("******************************************");
+//        test.testVigenereCipher("week4/testdata/titus-small.txt");
+        test.testVigenereBreaker();
 
     }
 }
