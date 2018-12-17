@@ -14,7 +14,9 @@ public class WordLengths {
             if (wordLength>=arrayLength){
                 counts[arrayLength]++;
             } else {
-                counts[wordLength]++;
+                if (wordLength>0) {
+                    counts[wordLength]++;
+                }
             }
         }
         for (int i=0;i<arrayLength;i++){
@@ -25,14 +27,14 @@ public class WordLengths {
 
     public static void testCountWordLengths(String fileName){
         FileResource fileRes = new FileResource(fileName);
-        int[] counts = new int[31];
+        int[] counts = new int[100];
         countWordLengths(fileRes,counts);
     }
 
     public static int indexOfMax(int[] values){
         int max = 0;
         for(int i=0;i<values.length;i++){
-            if (values[i]>max){
+            if (values[i]>values[max]){
                 max = i;
             }
         }

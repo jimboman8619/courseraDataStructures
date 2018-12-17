@@ -6,7 +6,7 @@ public class Chiper {
         StringBuilder result = new StringBuilder(input);
         for(int i=0;i<result.length();i++){
             Character ch = result.charAt(i);
-            if(ch!=' ' && ch!='.' && ch!='!') {
+            if(Character.isLetter(ch)) {
                 Character chForReplace = getEncryptedChar(ch, Alphabet.LOWER, Alphabet.UPPER, key);
                 result.setCharAt(i,chForReplace);
             }
@@ -17,7 +17,7 @@ public class Chiper {
         StringBuilder result = new StringBuilder(input);
         for(int i=0;i<result.length();i++){
             Character ch = result.charAt(i);
-            if(ch!=' ' && ch!='.' && ch!='!') {
+            if(Character.isLetter(ch)) {
                 int key = 0;
                 if(i%2==0) {
                     key = key1;

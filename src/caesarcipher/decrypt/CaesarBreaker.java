@@ -76,22 +76,51 @@ public class CaesarBreaker {
         return sb.toString();
     }
 
+    public static String decrypt2(String message, int key1, int key2){
+        String first = halfOfString(message,0);
+        String second = halfOfString(message,1);
+        StringBuilder sb = new StringBuilder();
+        String decrypted1 = Chiper.encrypt(first,26 - key1);
+        String decrypted2 = Chiper.encrypt(second,26 - key2);
+        int max = 0;
+        if (decrypted1.length()>=decrypted2.length()){
+            max = decrypted1.length();
+        } else {
+            max = decrypted2.length();
+        }
+        for (int i=0; i< max; i++){
+            try{
+                sb.append(decrypted1.charAt(i));
+                sb.append(decrypted2.charAt(i));
+            } catch (Exception ex){
+                ex.printStackTrace();
+            }
+        }
+        return sb.toString();
+    }
+
     public static void testDecrypt(){
-        String input = "At noon be in the conference room with your hat on for a surprise party. YELL LOUD!";
+        String input = "Just a test string with lots of eeeeeeeeeeeeeeeees";
         System.out.println(input);
-        String encrypted = Chiper.encrypt(input,6);
+        String encrypted = Chiper.encrypt(input,1);
         System.out.println(encrypted);
         String decrypted = decrypt(encrypted);
         System.out.println(decrypted);
     }
 
     public static void testDecrypt2(){
-        String input = "Just a test string with lots of eeeeeeeeeeeeeeeees";
+        String input = "Top ncmy qkff vi vguv vbg ycpx";
         System.out.println(input);
-        String encrypted = Chiper.encrypt2(input,11, 2);
+        String encrypted = Chiper.encrypt2(input,23, 2);
         System.out.println(encrypted);
         String decrypted = decrypt2(encrypted);
         System.out.println(decrypted);
+    }
+
+    public static void testDecrypt3(){
+        String input = "Top ncmy qkff vi vguv vbg ycpx";
+        System.out.println(input);
+        System.out.println(decrypt2(input,2,20));
     }
 
     }
