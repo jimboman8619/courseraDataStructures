@@ -37,17 +37,13 @@ public class Tester {
 
     public void testVigenereBreaker() {
         VigenereBreaker breacker = new VigenereBreaker();
-        System.out.println(breacker.sliceString("abcdefghijklm", 0, 3)); //"adgjm"
-        System.out.println(breacker.sliceString("abcdefghijklm", 1, 3)); //"behk"
-        System.out.println(breacker.sliceString("abcdefghijklm", 2, 3)); //"cfil"
-        System.out.println(breacker.sliceString("abcdefghijklm", 0, 4)); //"aeim"
-        System.out.println(breacker.sliceString("abcdefghijklm", 1, 4)); //"bfj"
-        System.out.println(breacker.sliceString("abcdefghijklm", 2, 4)); //"cgk"
-        System.out.println(breacker.sliceString("abcdefghijklm", 3, 4)); //"dhl"
-        System.out.println(breacker.sliceString("abcdefghijklm", 0, 5)); //"afk"
-        System.out.println(breacker.sliceString("abcdefghijklm", 1, 5)); //"bgl"
-        System.out.println(breacker.sliceString("abcdefghijklm", 2, 5)); //"chm"
-        System.out.println(breacker.sliceString("abcdefghijklm", 3, 5)); //"di"
-        System.out.println(breacker.sliceString("abcdefghijklm", 4, 5)); //"ej"
+//        System.out.println(breacker.sliceString("abcdefghijklm", 0, 3)); //"adgjm"
+        FileResource resource = new FileResource("week4/messages/secretmessage1.txt");
+        int[] keyLength = breacker.tryKeyLength(resource.asString(), 4, 'e');
+        for (int i: keyLength) {
+            System.out.println(i);
+        }
+        breacker.breakVigenere(4);
+
     }
 }
